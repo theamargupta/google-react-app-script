@@ -1,9 +1,10 @@
 import React from 'react';
+import { routeConst } from './utils';
 
-function HomeLandingPage({ setIsAuthenticated }) {
+function HomeLandingPage({ setRouteState }) {
   const handleLogout = () => {
     localStorage.removeItem('user');
-    setIsAuthenticated(false);
+    setRouteState(routeConst.root);
   };
   return (
     <div className="bg-blue-500 text-white min-h-screen">

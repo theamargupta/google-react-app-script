@@ -1,6 +1,11 @@
 import React from 'react';
+import { routeConst } from './utils';
 
-const App = () => {
+const LoginEmail = ({ setRouteState }) => {
+  const onSubmit = (data) => {
+    console.log(data);
+    setRouteState(routeConst.loginPassword);
+  };
   return (
     <div>
       <div className="login-header">
@@ -56,7 +61,11 @@ const App = () => {
 
       <div
         span
-        style="color: var(--log-cabin-3);font-family: var(--font-family-satoshi_variable-black);font-size: var(--font-size-m2);"
+        style={{
+          color: 'var(--log-cabin-3)',
+          fontFamily: 'var(--font-family-satoshi_variable-black)',
+          fontSize: 'var(--font-size-m2)',
+        }}
       >
         <b>Login Account</b>
       </div>
@@ -74,7 +83,7 @@ const App = () => {
 
       <div className="frame-4">
         <div className="next">
-          <div className="google-1valign-text-middle" onClick="getLogin2UI()">
+          <div className="google-1valign-text-middle" onClick={onSubmit}>
             Next
           </div>
         </div>
@@ -85,7 +94,13 @@ const App = () => {
           src="https://i.ibb.co/s5WRMdZ/Vector-80.png"
           alt="Vector 79"
         />
-        <span style="color: var(--suva-gray);font-family: var(--font-family-dm_sans);font-size: 15px;">
+        <span
+          style={{
+            color: 'var(--suva-gray)',
+            fontFamily: 'var(--font-family-dm_sans)',
+            fontSize: '15px',
+          }}
+        >
           Or Sign In With
         </span>
         <img
@@ -107,10 +122,22 @@ const App = () => {
         </div>
       </div>
       <div className="join-us">
-        <span style="color: var(--suva-gray);font-family: var(--font-family-dm_sans);font-size: 15px;">
+        <span
+          style={{
+            color: 'var(--suva-gray)',
+            fontFamily: 'var(--font-family-dm_sans)',
+            fontSize: '15px',
+          }}
+        >
           Don’t have an account?
         </span>
-        <span style="color: var(--fern);font-family: var(--font-family-dm_sans);font-size: 18px;">
+        <span
+          style={{
+            color: 'var(--fern)',
+            fontFamily: 'var(--font-family-dm_sans)',
+            fontSize: '18px',
+          }}
+        >
           Join Us
         </span>
       </div>
@@ -118,4 +145,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default LoginEmail;

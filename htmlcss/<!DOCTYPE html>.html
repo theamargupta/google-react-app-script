@@ -1,6 +1,358 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <base target="_top">
+  <style>
 
+  body
+  {
+    background-color: var(--white);  
+  }
+  
+  .login {
+    align-items: center;
+    background-color: var(--white);
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    height: 710px;
+  }
+  
+  .hidden,
+  .hidden * {
+    pointer-events: none;
+    visibility: hidden;
+  }
+  
+  .valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .google-1 {
+    color: var(--log-cabin-3);
+    font-family: var(--font-family-arimo);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    height: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    min-width: 46px;
+  }
+  
+  .btn-signinwith-google {
+    height: 16px;
+    width: 16px;
+  }
+  
+  .overlap-group1 {
+    height: 186px;
+    position: relative;
+    left: 0px;
+  }
+  
+  .login-header {
+    background-color: var(--fern);
+    /* display: flex; */
+    height: 186px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 300px;
+  }
+  
+  .overlap-group {
+    height: 186px;
+    margin-left: 13px;
+    position: relative;
+  }
+  
+  .group {
+    height: 39px;
+    left: 62px;
+    position: absolute;
+    top: 75px;
+    width: 98px;
+  }
+  
+  .group-2 {
+    height: 39px;
+    left: 16px;
+    position: absolute;
+    top: 107px;
+    width: 52px;
+  }
+  
+  .spreadsheets {
+    height: 132px;
+    left: 122px;
+    position: absolute;
+    top: 54px;
+    width: 165px;
+  }
+  
+  .group-1 {
+    height: 77px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    width: 104px;
+  }
+  
+  .group-3 {
+    height: 66px;
+    left: 215px;
+    position: absolute;
+    top: 5;
+    width: 60px;
+  }
+  
+  .google-and-facebook {
+    align-items: flex-start;
+    display: flex;
+    margin-top: 22px;
+    /* width: 200px;  */
+  
+    /* height: 56px; */
+    /* min-width: 50px; */
+    overflow: hidden;
+    position: relative;
+  
+  }
+  
+  .frame-4 {
+    align-items: flex-start;
+     display: flex;
+    background-color: var(--fern);
+    margin-top: 22px;
+    cursor: pointer;
+    border-radius: 10px;
+     overflow: hidden;
+    position: relative;
+      /* width: 200px;  */
+  }
+  
+  .google {
+    align-items: center;
+    background-color: 
+  #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    height: 48px;
+    /* min-width: 300px; */
+    padding: 0 100px;
+  }
+  
+  .next {
+  align-items: center;
+    color: 
+  #ffffff;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    height: 48px;
+    /* min-width: 327px; */
+    padding: 0 126px;
+  
+  }
+  
+  .hello-you-must-logi {
+    color: var(--suva-gray);
+    font-family: var(--font-family-dm_sans);
+    font-size: var(--font-size-m);
+  }
+  
+  .title {
+    color: var(--log-cabin-3);
+    font-family: var(--font-family-satoshi_variable-black);
+    font-size: var(--font-size-m2);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 32px;
+  }
+  
+  .join-us {
+    align-items: flex-start;
+    display: flex;
+    gap: 2px;
+    height: 16px;
+    margin-left: 13.5px;
+    margin-top: 24px;
+    min-width: 180px;
+  }
+  
+  .join-us-1 {
+    color: var(--fern);
+    font-family: var(--font-family-dm_sans);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 16px;
+  }
+  
+  .dont-have-an-account {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 16px;
+    min-width: 131px;
+  }
+  
+  .text-fiels {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1px;
+    margin-top: 10px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .text-fiels-1 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .message {
+    background-color: #f7f6fb;
+    border-radius: 10px;
+    height: 48px;
+    min-width: 275px;
+    position: relative;
+  }
+  
+  .add-a-message-optional {
+    color: #1d1d2899;
+    font-family: var(--font-family-satoshi_variable-medium);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: 22px;
+    position: absolute;
+    top: 13px;
+    white-space: nowrap;
+  }
+  
+  .existing-workflows {
+    color: #504f4f;
+    font-family: var(--font-family-satoshi_variable-bold);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .sign-in-with {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    height: 16px;
+    margin-left: 2px;
+    margin-top: 24px;
+  }
+  
+  .or-sign-in-with {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 16px;
+    width: 83px;
+  }
+  
+  .vector {
+    height: 1px;
+    margin-bottom: 2px;
+    object-fit: cover;
+  }
+  
+  .back {
+    align-self: flex-start;
+    cursor: pointer;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 14px;
+    width: 20px;
+  }
+  
+  .flex-row {
+    align-items: center;
+    display: flex;
+  }
+  
+  .group-84 {
+    align-items: center;
+    display: flex;
+    gap: 7px;
+    min-width: 114px;
+  }
+  
+  .components-select-active {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .remember-me {
+    color: #00000099;
+    font-family: var(--font-family-dm_sans);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 16px;
+    min-width: 81px;
+    gap: 10px;
+    height: 16px;
+    margin-left: 2px;
+    margin-top: 24px;
+    min-width: 300px;
+  }
+  
+  
+  .forgot-password {
+    color: var(--fern);
+    font-family: var(--font-family-dm_sans);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 2px;
+    min-height: 16px;
+    min-width: 102px;
+    text-align: right;
+  }
+  
+  .frame-4SingIn {
+    align-items: flex-end;
+    background-color: var(--fern);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 19px;
+    overflow: hidden;
+    padding: 15px 100px;
+  }
+  
+  .sign-in {
+    color: var(--white);
+    font-family: var(--font-family-dm_sans);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 15px;
+    min-width: 51px;
+  }
+    </style>
+  </head>
 <body>
 
   <div class="login-header">
